@@ -59,7 +59,7 @@ vim.g.ale_fixers = {
 vim.g.ale_fix_on_save = 1
 vim.g.ale_linters_explicit = 1
 
--- astro 
+-- astro
 vim.filetype.add({ extension = { astro = "astro" } })
 vim.g.astro_typescript = "enable"
 
@@ -98,19 +98,9 @@ vim.keymap.set("n", "<C-k>", "<C-w>k", { silent = true })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { silent = true })
 vim.keymap.set("n", "<C-h>", "<C-w>h", { silent = true })
 
-
---trouble settings
-vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", { silent = true, noremap = true })
-vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { silent = true, noremap = true })
-vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", { silent = true, noremap = true })
-
 -- copilot accept suggestion with tab
 vim.keymap.set("i", "<tab>", function()
 	require("copilot.suggestion").accept()
 	-- Put cursor on next line.
 	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<End>", true, false, true), "n", false)
 end, { desc = "[copilot] accept suggestion", silent = true })
-
