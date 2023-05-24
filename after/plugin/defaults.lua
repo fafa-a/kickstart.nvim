@@ -36,7 +36,7 @@ vim.opt.splitright = true
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd([[colorscheme catppuccin-mocha]])
+vim.cmd([[colorscheme catppuccin-latte]])
 
 -- Prettier
 vim.g.ale_fixers = {
@@ -70,6 +70,8 @@ vim.g.vim_svelte_plugin_load_full_syntax = 1
 -- format and save
 vim.keymap.set("n", "<C-s>", ":w<CR>", { silent = true })
 
+-- hanldes escape key & fixed copilot suggestion
+vim.keymap.set("i", "<C-c>", "<Esc>")
 -- vim.keymap.set("n", "<C-s>", ":w<CR>:Format<CR>", { silent = true })
 
 -- close current buffer
@@ -111,6 +113,7 @@ vim.keymap.set("i", "<tab>", function()
 	-- Put cursor on next line.
 	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<End>", true, false, true), "n", false)
 end, { desc = "[copilot] accept suggestion", silent = true })
+
 
 -- harpoon settings
 local mark = require("harpoon.mark")
