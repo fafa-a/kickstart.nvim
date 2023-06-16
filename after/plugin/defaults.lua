@@ -22,6 +22,8 @@ vim.opt.equalalways = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
+vim.diagnostic.config({ virtual_text = false })
+
 -- indent
 -- vim.opt.tabstop = 2
 -- vim.opt.softtabstop = 2
@@ -127,3 +129,5 @@ vim.keymap.set("n", "<C-i>", function() ui.nav_file(2) end)
 vim.keymap.set("n", "<C-o>", function() ui.nav_file(3) end)
 vim.keymap.set("n", "<C-p>", function() ui.nav_file(4) end)
 
+-- lsp lines
+vim.keymap.set("","<Leader>l",require("lsp_lines").toggle, { desc = "Toggle lsp_lines" })
