@@ -38,8 +38,8 @@ vim.diagnostic.config({ virtual_text = false })
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd([[colorscheme catppuccin-latte]])
 
+vim.cmd.colorscheme 'catppuccin-latte'
 -- Prettier
 vim.g.ale_fixers = {
 	javascript = { "prettier" },
