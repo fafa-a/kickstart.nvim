@@ -24,6 +24,17 @@ return {
          }
 
         end
-    }
+    },
+	{'cocopon/iceberg.vim'},
+	{
+	  'uloco/bluloco.nvim',
+	  lazy = false,
+	  priority = 1000,
+	  dependencies = { 'rktjmp/lush.nvim' },
+	  config = function()
+	    -- your optional config goes here, see below.
+	  end,
+	},
+	{'rmehri01/onenord.nvim'}
 
 }

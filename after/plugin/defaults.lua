@@ -209,3 +209,11 @@ keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 
 -- Floating terminal
 keymap({"n", "t"}, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
+
+--git conflict
+-- co — choose ours
+-- ct — choose theirs
+-- cb — choose both
+-- c0 — choose none
+-- ]x — move to previous conflict
+-- [x — move to next conflict
