@@ -35,6 +35,8 @@ return {
 	    -- your optional config goes here, see below.
 	  end,
 	},
-	{'rmehri01/onenord.nvim'}
+	{'rmehri01/onenord.nvim'},
+	{'Mofiqul/vscode.nvim'},
+	{'nyoom-engineering/oxocarbon.nvim'}
 
 }
