@@ -25,7 +25,6 @@ return {
 
         end
     },
-	{'cocopon/iceberg.vim'},
 	{
 	  'uloco/bluloco.nvim',
 	  lazy = false,
@@ -37,6 +36,6 @@ return {
 	},
 	{'rmehri01/onenord.nvim'},
 	{'Mofiqul/vscode.nvim'},
-	{'nyoom-engineering/oxocarbon.nvim'}
-
+	{'nyoom-engineering/oxocarbon.nvim'},
+	{'MetriC-DT/balance-theme.nvim'}
 }
