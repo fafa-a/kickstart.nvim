@@ -42,9 +42,9 @@ vim.o.termguicolors = true
 vim.cmd.colorscheme 'catppuccin-latte'
 
 -- set back up and swap file directory
-vim.opt.backupdir = "~/.nvim/backup"
-vim.opt.directory = "~/.nvim/swap"
-vim.opt.undodir = "~/.nvim/undo"
+local home = os.getenv("HOME")
+local backupDir = home .. "/.nvim/tmp/"
+vim.opt.directory = backupDir
 
 -- Prettier
 vim.g.ale_fixers = {
@@ -136,7 +136,7 @@ vim.keymap.set("n", "<C-o>", function() ui.nav_file(3) end)
 vim.keymap.set("n", "<C-p>", function() ui.nav_file(4) end)
 
 -- lsp lines
-vim.keymap.set("","<Leader>l",require("lsp_lines").toggle, { desc = "Toggle lsp_lines" })
+vim.keymap.set("", "<Leader>l", require("lsp_lines").toggle, { desc = "Toggle lsp_lines" })
 
 -- lspsaga
 local keymap = vim.keymap.set
@@ -148,7 +148,7 @@ local keymap = vim.keymap.set
 keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
 
 -- Code action
-keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
+keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
 
 -- Rename all occurrences of the hovered word for the entire file
 keymap("n", "gr", "<cmd>Lspsaga rename<CR>")
@@ -164,7 +164,7 @@ keymap("n", "gr", "<cmd>Lspsaga rename ++project<CR>")
 keymap("n", "gp", "<cmd>Lspsaga peek_definition<CR>")
 
 -- Go to definition
-keymap("n","gd", "<cmd>Lspsaga goto_definition<CR>")
+keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
 
 -- Peek type definition
 -- You can edit the file containing the type definition in the floating window
@@ -174,7 +174,7 @@ keymap("n","gd", "<cmd>Lspsaga goto_definition<CR>")
 keymap("n", "gt", "<cmd>Lspsaga peek_type_definition<CR>")
 
 -- Go to type definition
-keymap("n","gt", "<cmd>Lspsaga goto_type_definition<CR>")
+keymap("n", "gt", "<cmd>Lspsaga goto_type_definition<CR>")
 
 
 -- Show line diagnostics
@@ -192,14 +192,14 @@ keymap("n", "<leader>sw", "<cmd>Lspsaga show_workspace_diagnostics<CR>")
 keymap("n", "<leader>sc", "<cmd>Lspsaga show_cursor_diagnostics<CR>")
 -- Diagnostic jump with filters such as only jumping to an error
 keymap("n", "[E", function()
-  require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+	require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
 end)
 keymap("n", "]E", function()
-  require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
+	require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
 end)
 
 -- Toggle outline
-keymap("n","<leader>o", "<cmd>Lspsaga outline<CR>")
+keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
 
 -- Hover Doc
 -- If there is no hover doc,
@@ -214,7 +214,7 @@ keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
 keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 
 -- Floating terminal
-keymap({"n", "t"}, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
+keymap({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
 
 --git conflict
 -- co — choose ours
