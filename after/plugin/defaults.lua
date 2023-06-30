@@ -40,6 +40,12 @@ vim.diagnostic.config({ virtual_text = false })
 vim.o.termguicolors = true
 
 vim.cmd.colorscheme 'catppuccin-latte'
+
+-- set back up and swap file directory
+vim.opt.backupdir = "~/.nvim/backup"
+vim.opt.directory = "~/.nvim/swap"
+vim.opt.undodir = "~/.nvim/undo"
+
 -- Prettier
 vim.g.ale_fixers = {
 	javascript = { "prettier" },
