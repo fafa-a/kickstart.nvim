@@ -223,3 +223,9 @@ keymap({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
 -- c0 — choose none
 -- ]x — move to previous conflict
 -- [x — move to next conflict
+--
+-- use ripgrep to search 
+vim.keymap.set("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
+vim.keymap.set("n", "<leader>gc", live_grep_args_shortcuts.grep_word_under_cursor)
+vim.keymap.set("v", "<leader>gs", live_grep_args_shortcuts.grep_visual_selection)
