@@ -42,9 +42,12 @@ vim.o.termguicolors = true
 vim.cmd.colorscheme 'catppuccin-latte'
 
 -- set back up and swap file directory
+vim.opt.swapfile = false
+vim.opt.backup = false
 local home = os.getenv("HOME")
 local backupDir = home .. "/.nvim/tmp/"
 vim.opt.directory = backupDir
+vim.opt.undofile = true
 
 -- Prettier
 vim.g.ale_fixers = {
@@ -63,7 +66,9 @@ vim.g.ale_fixers = {
 	graphql = { "prettier" },
 	vue = { "prettier" },
 	lua = { "stylua" },
+	rust = { "rustfmt" },
 }
+vim.g.ale_linters = { rust = { "cargo" } }
 vim.g.ale_fix_on_save = 1
 vim.g.ale_linters_explicit = 1
 
@@ -224,7 +229,7 @@ keymap({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
 -- ]x — move to previous conflict
 -- [x — move to next conflict
 --
--- use ripgrep to search 
+-- use ripgrep to search
 vim.keymap.set("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 local live_grep_args_shortcuts = require("telescope-live-grep-args.shortcuts")
 vim.keymap.set("n", "<leader>gc", live_grep_args_shortcuts.grep_word_under_cursor)
