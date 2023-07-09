@@ -37,5 +37,5 @@ return {
 	{'rmehri01/onenord.nvim'},
 	{'Mofiqul/vscode.nvim'},
 	{'nyoom-engineering/oxocarbon.nvim'},
-	{'MetriC-DT/balance-theme.nvim'}
+	{'humanoid-colors/vim-humanoid-colorscheme'}
 }

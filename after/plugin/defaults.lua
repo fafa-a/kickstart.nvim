@@ -25,9 +25,9 @@ vim.opt.splitright = true
 vim.diagnostic.config({ virtual_text = false })
 
 -- indent
--- vim.opt.tabstop = 2
--- vim.opt.softtabstop = 2
--- vim.opt.shiftwidth = 2
+--vim.opt.tabstop = 2
+--vim.opt.softtabstop = 2
+--vim.opt.shiftwidth = 2
 
 -- Set background blurry
 -- vim.api.nvim_command([[
@@ -91,8 +91,8 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<leader>c", ":bd<CR>", { silent = true })
 
 -- buffer navigation
-vim.keymap.set("n", "<S-h>", ":bprev<CR>", { silent = true })
-vim.keymap.set("n", "<S-l>", ":bnext<CR>", { silent = true })
+vim.keymap.set("n", "<S-b>", ":bprev<CR>", { silent = true })
+vim.keymap.set("n", "<S-n>", ":bnext<CR>", { silent = true })
 
 -- lazygit
 vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
@@ -135,10 +135,10 @@ local ui = require("harpoon.ui")
 vim.keymap.set("n", "<leader>aa", mark.add_file)
 vim.keymap.set("n", "<C-n>", ui.toggle_quick_menu)
 
-vim.keymap.set("n", "<C-u>", function() ui.nav_file(1) end)
-vim.keymap.set("n", "<C-i>", function() ui.nav_file(2) end)
-vim.keymap.set("n", "<C-o>", function() ui.nav_file(3) end)
-vim.keymap.set("n", "<C-p>", function() ui.nav_file(4) end)
+vim.keymap.set("n", "<S-1>", function() ui.nav_file(1) end)
+vim.keymap.set("n", "<S-2>", function() ui.nav_file(2) end)
+vim.keymap.set("n", "<S-3>", function() ui.nav_file(3) end)
+vim.keymap.set("n", "<S-4>", function() ui.nav_file(4) end)
 
 -- lsp lines
 vim.keymap.set("", "<Leader>l", require("lsp_lines").toggle, { desc = "Toggle lsp_lines" })
@@ -155,11 +155,11 @@ keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
 -- Code action
 keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
 
--- Rename all occurrences of the hovered word for the entire file
+-- Rename all occureences of the hovered word for the entire file
 keymap("n", "gr", "<cmd>Lspsaga rename<CR>")
 
 -- Rename all occurrences of the hovered word for the selected files
-keymap("n", "gr", "<cmd>Lspsaga rename ++project<CR>")
+--keymap("n", "gr", "<cmd>Lspsaga rename ++project<CR>")
 
 -- Peek definition
 -- You can edit the file containing the definition in the floating window
