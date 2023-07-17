@@ -72,3 +72,28 @@
 | n `<leader>fg` | Ripgrep word             |
 | n `<leader>gc` | Ripgrep cursor word      |
 | n `<leader>gs` | Ripgrep cursor selection |
+
+# Tips
+
+## Ajouter quelque chose a la fin de toutes les lignes selectionnées visuellement
+
+- 1 <C-v>
+- 2 Sélectionner les lignes
+- 3 $
+- 4 A
+- 5 Taper ce que l'on veut ajouter
+- 6 <ESC>
+
+## Ajouter quelque chose au début de toutes les lignes selectionnées visuellement
+
+- 1 ^
+- 2 <C-v>
+- 3 Sélectionner les lignes
+- 4 I
+- 5 Taper ce que l'on veut ajouter
+- 6 <ESC>
+
+## Relative line number
+
+- 1 :set rnu (relative number)
+- 2 :set rnu! (number)
