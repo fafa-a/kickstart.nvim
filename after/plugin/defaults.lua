@@ -135,8 +135,8 @@ local ui = require("harpoon.ui")
 vim.keymap.set("n", "<leader>aa", mark.add_file)
 vim.keymap.set("n", "<C-n>", ui.toggle_quick_menu)
 
-vim.keymap.set("n", "<S-1>", function() ui.nav_file(1) end)
-vim.keymap.set("n", "<S-2>", function() ui.nav_file(2) end)
+vim.keymap.set("n", "<C-;>", function() ui.nav_file(1) end)
+vim.keymap.set("n", "<C-'>", function() ui.nav_file(2) end)
 vim.keymap.set("n", "<S-3>", function() ui.nav_file(3) end)
 vim.keymap.set("n", "<S-4>", function() ui.nav_file(4) end)
 
@@ -260,7 +260,7 @@ require('lualine').setup {
 		lualine_a = { 'mode' },
 		lualine_b = { 'branch', },
 		lualine_c = { 'filename' },
-		lualine_x = { 'diff' ,'diagnostic'},
+		lualine_x = { 'diff', '' },
 		lualine_y = {
 			{
 				'datetime',
@@ -270,4 +270,31 @@ require('lualine').setup {
 		},
 		lualine_z = { 'location' },
 	},
+}
+require("bufferline").setup{
+	keys = {
+    { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle pin" },
+    { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete non-pinned buffers" },
+    { "<S-h>", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev buffer" },
+    { "<S-l>", "<cmd>BufferLineCycleNext<cr>", desc = "Next buffer" },
+  },
+  version = "*",
+  opts = {
+    options = {
+      -- stylua: ignore
+      close_command = function(n) require("mini.bufremove").delete(n, false) end,
+      -- stylua: ignore
+      right_mouse_command = function(n) require("mini.bufremove").delete(n, false) end,
+      diagnostics = "nvim_lsp",
+      always_show_bufferline = true,
+      offsets = {
+        {
+          filetype = "neo-tree",
+          text = "Neo-tree",
+          highlight = "Directory",
+          text_align = "left",
+        },
+      },
+    },
+  },
 }
