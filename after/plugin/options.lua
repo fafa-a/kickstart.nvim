@@ -96,6 +96,7 @@ require('lualine').setup {
 		lualine_z = { 'location' },
 	},
 }
+
 require("bufferline").setup{
 	keys = {
     { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle pin" },

@@ -17,7 +17,7 @@ map("n", "<S-n>", ":bnext<CR>", { silent = true })
 map("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
 
 -- toggle nvim-tree explorer
-map("n", "<leader>x", ":Neotree toggle<CR>", { silent = true })
+map("n", "<leader>e", ":Neotree toggle<CR>", { silent = true })
 
 --disable arrow keys
 map("n", "<up>", "<nop>", { silent = true })
